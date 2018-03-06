@@ -1,0 +1,36 @@
+{
+  "name": "m-wepy-redux",
+  "version": "1.0.1",
+  "description": "WePY bindings for Redux",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "gulp build",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aloneszjl/m-wepy-redux.git"
+  },
+  "keywords": ["wepy", "redux"],
+  "author": "alones",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aloneszjl/m-wepy-redux/issues"
+  },
+  "homepage": "https://github.com/aloneszjl/m-wepy-redux#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "del": "^2.2.2",
+    "eslint": "^4.18.2",
+    "eslint-plugin-import": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-sourcemaps": "^2.5.1",
+    "gulp-uglify": "^3.0.0"
+  }
+}
