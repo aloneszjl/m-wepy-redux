@@ -21,7 +21,7 @@ export const mapDispatch = mapDispatchToProps => {
       [action]: (...args) =>
         typeof actionMap[action] === "string"
           ? dispatch({ type: actionMap[action] })
-          : dispatch(actionMap[action](args))
+          : dispatch(actionMap[action](...args))
     }),
     {}
   );
