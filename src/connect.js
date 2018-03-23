@@ -16,7 +16,7 @@ export default (
     return class extends Component {
       constructor() {
         super();
-        const props = Object.keys(this.props).reduce(
+        const props = Object.keys(this.props || {}).reduce(
           (props, propKey) => ({
             ...props,
             [propKey]: this[propKey]
@@ -34,7 +34,7 @@ export default (
         };
       }
       onStateChange = (options = {}) => {
-        const props = Object.keys(this.props).reduce(
+        const props = Object.keys(this.props || {}).reduce(
           (props, propKey) => ({
             ...props,
             [propKey]: this[propKey]
