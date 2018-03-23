@@ -16,7 +16,14 @@ export default (
     return class extends Component {
       constructor() {
         super();
-        const state = mapStateToProps(store.getState(), this.props);
+        const props = Object.keys(this.props).reduce(
+          (props, propKey) => ({
+            ...props,
+            [propKey]: this[propKey]
+          }),
+          {}
+        );
+        const state = mapStateToProps(store.getState(), props);
         this.computed = {
           ...(this.computed || {}),
           ...mapState(state)
@@ -27,10 +34,17 @@ export default (
         };
       }
       onStateChange = (options = {}) => {
-        const state = {
-          ...options,
-          ...mapStateToProps(store.getState(), this.props)
-        };
+        const props = Object.keys(this.props).reduce(
+          (props, propKey) => ({
+            ...props,
+            [propKey]: this[propKey]
+          }),
+          {}
+        );
+        const state = mapStateToProps(store.getState(), {
+          ...props,
+          ...options
+        });
         let hasChanged = false;
         Object.keys(state).forEach(k => {
           const newV = state[k];
