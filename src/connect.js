@@ -43,7 +43,7 @@ export default (
         );
         const state = mapStateToProps(store.getState(), {
           ...props,
-          ...options
+          ...this.navigationParams
         });
         let hasChanged = false;
         Object.keys(state).forEach(k => {
@@ -57,7 +57,8 @@ export default (
       };
       onLoad(options) {
         unSubscribe = store.subscribe(this.onStateChange);
-        this.onStateChange(options);
+        this.navigationParams = options || {};
+        this.onStateChange();
         onLoad && onLoad.apply(this, arguments);
       }
       onUnload() {

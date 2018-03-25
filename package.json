@@ -1,6 +1,6 @@
 {
   "name": "m-wepy-redux",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "WePY bindings for Redux",
   "main": "dist/index.js",
   "scripts": {
@@ -12,7 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/aloneszjl/m-wepy-redux.git"
   },
-  "keywords": ["wepy", "redux"],
+  "keywords": [
+    "wepy",
+    "redux"
+  ],
   "author": "alones",
   "license": "ISC",
   "bugs": {
