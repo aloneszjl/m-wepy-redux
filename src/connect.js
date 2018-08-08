@@ -5,7 +5,8 @@ const defaultMapToProps = () => ({});
 
 export default (
   mapStateToProps = defaultMapToProps,
-  mapDispatchToProps = defaultMapToProps()
+  mapDispatchToProps = defaultMapToProps(),
+  unloadProps = []
 ) => {
   const store = getStore();
   return function connectComponent(Component) {
@@ -64,6 +65,10 @@ export default (
       onUnload() {
         unSubscribe && unSubscribe();
         unSubscribe = null;
+        unloadProps.forEach(propKey => {
+          this.computed[propKey] = () => {};
+          this[propKey] = null;
+        })
         onUnload && onUnload.apply(this, arguments);
       }
     };
