@@ -1,7 +1,7 @@
-let store = null;
+let reduxStore = null;
 
-export const getStore = () => store;
+export const getStore = () => reduxStore;
 
 export const setStore = s => {
-  store = s;
+  reduxStore = s;
 };
